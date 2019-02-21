@@ -1,0 +1,4 @@
+*.swo
+*.swp
+wordpress_db_data
+.DS_store
