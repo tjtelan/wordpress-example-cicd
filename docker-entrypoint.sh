@@ -2,9 +2,6 @@
 
 # TODO: VALIDATE THAT REQUIRED ENVIRONMENT VARIABLES ARE SET
 
-# FIXME: Get this core download working in the Dockerfile
-#wp core download
-
 # Check if DB is initialized
 # What happens when this already exists?
 # FIXME: Might need to play around with `wp config has` to probe if the config exists. Like if we mount it in.
@@ -16,7 +13,6 @@ if ! $(wp core is-installed); then
 fi
 
 # Install theme
-#wp theme install ../../../usr/src/${ACTIVE_THEME}.zip
 wp theme install /usr/src/${ACTIVE_THEME}.zip
 wp theme activate ${ACTIVE_THEME}
 
