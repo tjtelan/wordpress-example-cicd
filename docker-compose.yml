@@ -4,6 +4,7 @@ services:
     build: .
     restart: always
     environment:
+      DEBUG: 0 # 1 or true for enabled, 0, false or undefined for disabled
       WORDPRESS_DB_HOST: mariadb
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
@@ -21,7 +22,7 @@ services:
       - 8080:8080
 
   mariadb:
-    image: mariadb
+    image: mariadb:10
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
